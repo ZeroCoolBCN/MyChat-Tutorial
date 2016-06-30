@@ -22,7 +22,18 @@ angular.module('mychat', ['ionic', 'mychat.controllers', 'mychat.services', 'fir
     $rootScope.logout = function () {
         console.log("Logging out from the app");
     }
-}); }).config(function ($stateProvider, $urlRouterProvider) {
+    });
+    var FIREBASE_URL = "https://simplechatroom.firebaseio.com";
+ })
+
+ .factory("Auth", ["$firebaseAuth", "$rootScope", 
+    function($firebaseAuth, $rootScope) {
+        var ref = new Firebase(FIREBASE_URL);
+        return $firebaseAuth(ref);
+ }])
+
+    
+.config(function ($stateProvider, $urlRouterProvider) {
 
 // Ionic uses AngularUI Router which uses the concept of states
 // Learn more here: https://github.com/angular-ui/ui-router
