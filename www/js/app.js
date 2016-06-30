@@ -1,5 +1,5 @@
 // Ionic Starter App
-
+var FIREBASE_URL = "https://simplechatroom.firebaseio.com";
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
@@ -23,7 +23,7 @@ angular.module('mychat', ['ionic', 'mychat.controllers', 'mychat.services', 'fir
         console.log("Logging out from the app");
     }
     });
-    var FIREBASE_URL = "https://simplechatroom.firebaseio.com";
+    
  })
 
  .factory("Auth", ["$firebaseAuth", "$rootScope", 
